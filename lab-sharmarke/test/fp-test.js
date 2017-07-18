@@ -12,7 +12,7 @@ describe('Fp', () => {
       expect(result).to.deep.equal([3,4,5,6,7]);
     });
 
-    it('should throw a missing name error', () => {
+    it('should throw an error', () => {
       let result = fp.map;
       expect(result).to.throw(Error);
     });
@@ -26,7 +26,7 @@ describe('Fp', () => {
       expect(result).to.deep.equal([1,2,3]);
     });
 
-    it('should throw a missing name error', () => {
+    it('should throw an error', () => {
       let result = fp.filter;
       expect(result).to.throw(Error);
     });
@@ -39,15 +39,32 @@ describe('Fp', () => {
       expect(result).to.deep.equal(15);
     });
 
-    it('should throw a missing name error', () => {
+    it('should throw an error', () => {
       let result = fp.reduce;
       expect(result).to.throw(Error);
     });
   });
+
   describe('#splice', () => {
-    it('should fish' () => {
-      let results = fp.splice([1, 2, 3, 'fish', 5], 3, 1, 4);
-      expect(result).to.deep.equal(['fish']);
+    it('should return hello', () => {
+      let result = fp.splice([1, 2, 3, 'hello', 5], 3, 1, 4);
+      console.log(result);
+      expect(result).to.deep.equal(['hello']);
     });
+
+    it('should throw an error', () => {
+      let result = fp.reduce;
+      expect(result).to.throw(Error);
+    });
+  });
+
+  describe('#concat', () => {
+    it('should return [1,2,3,4,5]', () => {
+      let result = fp.concat([1,2,3],[4,5]);
+      expect(result).to.deep.equal([1,2,3,4,5]);
+    });
+    it('should throw an error', () => {
+      let result = fp.reduce;
+      expect(result).to.throw(Error);
   });
 });
