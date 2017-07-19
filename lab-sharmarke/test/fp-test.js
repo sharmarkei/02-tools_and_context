@@ -22,7 +22,6 @@ describe('Fp', () => {
     it('should return 1,2,3', () => {
       let arr = [1,2,3,4,5];
       let result = fp.filter(arr, n => n <= 3);
-      console.log(result);
       expect(result).to.deep.equal([1,2,3]);
     });
 
@@ -66,5 +65,6 @@ describe('Fp', () => {
     it('should throw an error', () => {
       let result = fp.reduce;
       expect(result).to.throw(Error);
+    });
   });
 });
